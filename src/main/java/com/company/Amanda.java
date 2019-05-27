@@ -98,6 +98,14 @@ public class Amanda {
        return dictionary;
     }
     /**
+    *Returns the amount of words within a string.
+    *@param list List of tokens found within a string 
+    *@return Integer of the amount of words in the string.
+    */
+    public static int wordAmount(List<CoreLabel> list){
+        return list.size() -1;
+    }
+    /**
      * Returns a sorted hashmap representing the amount of times a word is within a string.
      * @param dictionary Hashmap of the words, and their appearance within a string.
      * @return Sorted hashmap of words, and their appearance within a string.
@@ -117,7 +125,7 @@ public class Amanda {
         return sort;
     }
     /**
-     * Class to be use in a method.
+     * Class to be use in the posPosition method.
      */
     public class PosPosition{
 
@@ -131,18 +139,15 @@ public class Amanda {
         public String getPos() {
             return pos;
         }
-
         public void setPos(String pos) {
             this.pos = pos;
         }
         public int getPosition() {
             return position;
         }
-
         public void setPosition(int position) {
             this.position = position;
         }
-
         public String toString(){
             String string = getPos() + "=" + getPosition();
             return string;
